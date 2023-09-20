@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
-                          letters = _.at(name, pureArr);  
+                          letters = pureArr.map(num => name[num]);  
                     if(vowels.includes(letters)) {
                         results.push(element)
                     }
