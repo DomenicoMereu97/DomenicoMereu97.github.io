@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
-                          letters = pureArr.map(num => name[parseInt(num) -1]);  
+                          letters = pureArr.map(num => name[parseInt(num) -1]),
+                          control = [];
                     letters.forEach(letter => {
-                        let control = [];
                         if(vowels.includes(letter)) {
                             control.push(letter);
                             if(control.length == letters.length) {
