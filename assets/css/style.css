@@ -34,27 +34,17 @@ body {
 ----*/
 
 #pincode {
-  position: fixed;
   overflow: hidden;
-  height: 667px;
-  width: 375px;
-  z-index: 9999;
+  height: 100vh;
   background-color: #272a2f;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/mountain.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
-  border-radius: 10px;
   text-align: center;
   -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
-  top: 50%;
-  left: 50%;
-  margin-top: -335px;
-  /* Negative half of height. */
-  margin-left: -188px;
-  /* Negative half of width. */
 }
 
 #numbers {
