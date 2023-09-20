@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     females = data.female.mostUsed.filter(e => e.count > accuracy),
                     names = males.concat(females),
                     [nameLenght] = array,
-                    pureArr = array.slice(0, -2).shift(),
+                    pureArr = array.slice(0, -2).slice(1),
                     firstFilteredArr = names.filter(e => e.name.length == nameLenght),
                     vowels = ['A', 'E', 'I', 'O', 'U'],
                     results = [];
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
-                          letters = pureArr.map(num => name[num]);  
+                          letters = pureArr.map(num => name[parseInt(num) -1]);  
                     if(vowels.includes(letters)) {
                         results.push(element)
                     }
