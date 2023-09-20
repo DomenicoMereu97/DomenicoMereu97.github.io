@@ -23,9 +23,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
                           letters = pureArr.map(num => name[parseInt(num) -1]);  
-                    if(vowels.includes(letters)) {
-                        results.push(element)
-                    }
+                    letters.forEach(letter => {
+                        const control = [];
+                        if(vowels.includes(letter)) {
+                            control.push(true);
+                            if(control.length == letters.length) {
+                                results.push(element);
+                            }
+                        }
+                    })
 
                 });
 
