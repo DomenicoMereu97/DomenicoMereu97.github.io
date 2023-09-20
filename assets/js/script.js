@@ -10,8 +10,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             array.push(key.innerText)
             if(array.length && array.slice(-2).toString() == "0,0"){
-                console.log(array)
-                console.log(data.male.length)
+                let accuracy = 1000;
+                const males = data.male.mostUsed.filter(e => e.count > 1000),
+                 females = data.female.mostUsed.filter(e => e.count > 1000),
+
+                names = males.concat(females);
+                console.log(names.length)
             }
         })
     });
