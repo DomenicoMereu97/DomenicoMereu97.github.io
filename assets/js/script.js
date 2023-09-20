@@ -24,11 +24,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     const name = [...element.name],
                           letters = pureArr.map(num => name[parseInt(num) -1]);  
                     letters.forEach(letter => {
-                        const control = [];
+                        let control = [];
                         if(vowels.includes(letter)) {
                             control.push(letter);
                             if(control.length == letters.length) {
                                 results.push(element);
+                                return;
                             }
                         }
                     })
