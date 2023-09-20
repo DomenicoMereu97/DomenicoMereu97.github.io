@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     letters.forEach(letter => {
                         const control = [];
                         if(vowels.includes(letter)) {
-                            control.push(true);
+                            control.push(letter);
                             if(control.length == letters.length) {
                                 results.push(element);
                             }
