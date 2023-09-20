@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     pureArr = array.slice(0, -2).slice(1),
                     firstFilteredArr = names.filter(e => e.name.length == nameLenght),
                     vowels = ['A', 'E', 'I', 'O', 'U'],
-                    results = [];
+                    results = [],
+                    maxResults = 5;
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
@@ -35,8 +36,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     })
 
                 });
-
-                console.log(results)
+                results.sort((a, b) => {
+                    return b.count - a.count;
+                });
+                
+                console.log(results.slice(0, maxResults))
             }
         })
     });
