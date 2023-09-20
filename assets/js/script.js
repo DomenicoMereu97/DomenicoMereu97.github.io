@@ -1,5 +1,4 @@
-console.log('ciao fra')
-
+import data from '/assets/data.json' assert {type: 'json'};
 
 document.addEventListener("DOMContentLoaded", (event) => {
     const keyboard = document.getElementById('numbers'),
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             array.push(key.innerText)
             if(array.length && array.slice(-2).toString() == "0,0"){
                 console.log(array)
+                console.log(data.male.length)
             }
         })
     });
