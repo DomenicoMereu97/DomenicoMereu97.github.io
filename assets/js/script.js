@@ -14,9 +14,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     males = data.male.mostUsed.filter(e => e.count > accuracy),
                     females = data.female.mostUsed.filter(e => e.count > accuracy),
                     names = males.concat(females),
-                    [nameLenght] = array;
-                console.log(names.length)
-                console.log(names.filter(e => e.name.length == nameLenght))
+                    [nameLenght] = array,
+                    pureArr = array.slice(0, -2).shift(),
+                    firstFilteredArr = names.filter(e => e.name.length == nameLenght),
+                    vowels = ['A', 'E', 'I', 'O', 'U'],
+                    results = [];
+
+                firstFilteredArr.forEach(element => {
+                    const name = [...element.name],
+                          letters = _.at(name, pureArr);  
+                    if(vowels.includes(letters)) {
+                        results.push(element)
+                    }
+
+                });
+
+                console.log(results)
             }
         })
     });
