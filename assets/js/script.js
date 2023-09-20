@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     [...keys].forEach(key => {
         key.addEventListener("click", (event) => {
-
             array.push(key.innerText)
+
             if (array.length && array.slice(-2).toString() == "0,0") {
                 const accuracy = 1000,
                     males = data.male.mostUsed.filter(e => e.count > accuracy),
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     return b.count - a.count;
                 });
                 
-                console.log(results.slice(0, maxResults))
+                console.log(results)
             }
         })
     });
