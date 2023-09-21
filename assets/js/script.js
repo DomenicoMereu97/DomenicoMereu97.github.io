@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if(clear <= 4 && index == clear-1) {
                    dots[index].classList.add('active');
                 }
-                if (clear >4 && index == clear-1){
+                if (clear >4 && index == clear-5){
                     dots[index].classList.remove('active');
                 }
             });
