@@ -77,6 +77,12 @@ body {
     display: block;
 }
 
+#notes {
+    width: 60%;
+    min-height: 200px;
+    background: #fff9c4;
+}
+
 #numbers.hide {
   opacity: 0.3;
 }
