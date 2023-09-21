@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     const name = [...element.name],
                         letters = pureArr.map(num => name[parseInt(num) - 1]),
                         control = [];
+                        const difference = name.filter((element) => !letters.includes(element));
                     letters.forEach(letter => {
                         if (vowels.includes(letter)) {
                             control.push(letter);
