@@ -9,11 +9,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
         h = now.getHours(),
         m = now.getMinutes(),
         clock = document.getElementById("time");
+        let clear = 0,
+        invert = false;
         
+
         clock.innerHTML = (h.toString() + ":" + m.toString());
 
     [...keys].forEach(key => {
         key.addEventListener("click", (event) => {
+            const dotsContainer = document.getElementById("fields"),
+            dots = dotsContainer.querySelectorAll(".numberfield");
+          
+            dots.forEach(e => {
+                
+                if(clear < 4) {
+                    invert ? e.classList.add('active') : e.classList.remove('active');
+                    clear++;
+                }
+                if(clear == 4) {
+                    clear = 0;
+                    invert = true;
+                }
+            });
             array.push(key.innerText)
 
             if (array.length && array.slice(-2).toString() == "0,0") {
