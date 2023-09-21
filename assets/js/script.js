@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
-                        ceck = true
+                        ceck = true,
                         letters = pureArr.map(num => name[parseInt(num) - 1]),
                         control = [],
                         difference = name.filter((element) => !letters.includes(element));
