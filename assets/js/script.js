@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const keyboard = document.getElementById('numbers'),
         notifiche = document.getElementById("notifiche"),
+        notificheResult = notifiche.getElementById("result"),
         keys = keyboard.getElementsByTagName('button'),
         array = [],
         now = new Date,
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 });
                 keyboard.classList.add("unlock")
                 notifiche.classList.add("unlock")
+                notificheResult.innerHTML = results.length
                 dotsContainer.style.display = "none";
                 console.log(results)
             }
