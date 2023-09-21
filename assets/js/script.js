@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         array = [],
         now = new Date,
         h = now.getHours(),
-        m = now.getMinutes(),
+        m = (now.getMinutes()<10?'0':'' + now.getMinutes()),
         clock = document.getElementById("time");
 
     let clear = 0;

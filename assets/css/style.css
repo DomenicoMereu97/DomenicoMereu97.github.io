@@ -78,7 +78,8 @@ body {
 }
 
 #notes {
-    width: 60%;
+    width: 70%;
+    padding: 10px 0;
     min-height: 100px;
     background: #fff9c4;
     margin: auto;
@@ -93,17 +94,9 @@ body {
     font-family: cursive;
     text-align: start;
     padding-left: 10px;
-    margin: 0 15px;
+    margin: 0 0 6px 6px;
 }
 
-#notes span {
-    color: black;
-    text-transform: lowercase;
-    font-family: cursive;
-    text-align: start;
-    padding-left: 10px;
-    margin: 0 15px;
-}
 
 #notes.unlock {
     display: block;
