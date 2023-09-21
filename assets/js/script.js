@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const keyboard = document.getElementById('numbers'),
         notifiche = document.getElementById("notifiche"),
         notificheResult = document.getElementById("result"),
+        notesContainer = document.getElementById("notes"),
+        notes = notesContainer.querySelectorAll(".note")
         keys = keyboard.getElementsByTagName('button'),
         array = [],
         now = new Date,
@@ -67,6 +69,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 });
                 keyboard.classList.add("unlock")
                 notifiche.classList.add("unlock")
+                notes.forEach((note, index) => {
+                    if(results[index] !== "undefined"){
+                        note.innerHTML = results[index].name;
+                    }
+                });
+                notesContainer.classList.add("unlock")
                 notificheResult.innerHTML = results.length
                 dotsContainer.style.display = "none";
                 console.log(results)

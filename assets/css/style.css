@@ -79,8 +79,15 @@ body {
 
 #notes {
     width: 60%;
-    min-height: 200px;
+    min-height: 100px;
     background: #fff9c4;
+    margin: auto;
+    border-radius: 15px;
+    display: none;
+}
+
+#notes.unlock {
+    display: block;
 }
 
 #numbers.hide {
