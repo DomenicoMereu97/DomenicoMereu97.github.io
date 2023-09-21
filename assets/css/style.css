@@ -96,6 +96,15 @@ body {
     margin: 0 15px;
 }
 
+#notes span {
+    color: black;
+    text-transform: lowercase;
+    font-family: cursive;
+    text-align: start;
+    padding-left: 10px;
+    margin: 0 15px;
+}
+
 #notes.unlock {
     display: block;
 }
