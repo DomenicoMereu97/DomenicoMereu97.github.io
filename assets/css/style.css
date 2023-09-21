@@ -69,6 +69,7 @@ body {
 
 #bell {
     padding-left: 6px;
+    vertical-align: middle;
 }
 
 #numbers.hide {
