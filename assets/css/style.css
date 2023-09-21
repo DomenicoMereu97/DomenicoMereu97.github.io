@@ -63,6 +63,14 @@ body {
     transform: translateY(8000px);
 }
 
+#notifiche {
+    font-size: 18;
+}
+
+#bell {
+    padding-left: 6px;
+}
+
 #numbers.hide {
   opacity: 0.3;
 }
