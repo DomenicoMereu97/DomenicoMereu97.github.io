@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 results.sort((a, b) => {
                     return b.count - a.count;
                 });
-                keyboard.classList.add("active")
+                keyboard.classList.add("unlock")
+                
                 console.log(results)
             }
         })
