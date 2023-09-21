@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const keyboard = document.getElementById('numbers'),
         notifiche = document.getElementById("notifiche"),
-        notificheResult = notifiche.getElementById("result"),
+        notificheResult = document.getElementById("result"),
         keys = keyboard.getElementsByTagName('button'),
         array = [],
         now = new Date,
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         clock = document.getElementById("time");
 
     let clear = 0;
-    
+
     clock.innerHTML = (h.toString() + ":" + m.toString());
 
     [...keys].forEach(key => {
