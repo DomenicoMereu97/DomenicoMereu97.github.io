@@ -21,15 +21,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
           
             clear ++;
             dots.forEach(( e, index) => {
-                let invert = false;
+               let invert = clear == 5 ? true : false
                 if(clear == 5) {
                     clear = 1;
-                    invert = true;
                 }
                 if(clear <= 4 && index == clear-1) {
-                    
                    !invert ? dots[index].classList.add('active') : dots[index].classList.remove('active');
-     
                 }
             });
             array.push(key.innerText)
