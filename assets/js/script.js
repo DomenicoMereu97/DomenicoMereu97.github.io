@@ -51,20 +51,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
+                        ceck = true
                         letters = pureArr.map(num => name[parseInt(num) - 1]),
                         control = [],
                         difference = name.filter((element) => !letters.includes(element));
-                        console.log(difference)
-                    letters.forEach(letter => {
-                        if (vowels.includes(letter)) {
-                            control.push(letter);
-                            if (control.length == letters.length) {
-                                results.push(element);
-                                return;
-                            }
+                
+                    difference.forEach(l => {
+                        if (vowels.includes(l)) {
+                            ceck = false;
                         }
-                    })
-
+                    });
+                    if (ceck) {
+                        letters.forEach(letter => {
+                            if (vowels.includes(letter)) {
+                                control.push(letter);
+                                if (control.length == letters.length) {
+                                    results.push(element);
+                                    return;
+                                }
+                            }
+                        })
+                    }
+                    
                 });
                 results.sort((a, b) => {
                     return b.count - a.count;
