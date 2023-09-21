@@ -64,11 +64,11 @@ body {
 }
 
 #notifiche {
-    font-size: 18;
+    font-size: 18px;
 }
 
 #bell {
-    padding-left: 6px;
+    margin-right: 6px;
     vertical-align: middle;
 }
 
