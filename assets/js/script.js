@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         h = now.getHours(),
         m = now.getMinutes(),
         clock = document.getElementById("time");
-        let clear = 0,
-        invert = false;
+        let clear = 0;
         
 
         clock.innerHTML = (h.toString() + ":" + m.toString());
@@ -22,15 +21,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
           
             clear ++;
             dots.forEach(( e, index) => {
-                if(clear < 4 && index == clear-1) {
+                let invert = false;
+                if(clear == 5) {
+                    clear = 1;
+                    invert = true;
+                }
+                if(clear <= 4 && index == clear-1) {
                     
                    !invert ? dots[index].classList.add('active') : dots[index].classList.remove('active');
      
-                }
-                if(clear == 4) {
-                    !invert ? dots[index].classList.add('active') : dots[index].classList.remove('active');
-                    clear = 0;
-                    invert = true;
                 }
             });
             array.push(key.innerText)
