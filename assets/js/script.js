@@ -3,6 +3,7 @@ import data from '/assets/data.json' assert {type: 'json'};
 document.addEventListener("DOMContentLoaded", (event) => {
 
     const keyboard = document.getElementById('numbers'),
+        notifiche = document.getElementById("notifiche"),
         keys = keyboard.getElementsByTagName('button'),
         array = [],
         now = new Date,
@@ -64,7 +65,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     return b.count - a.count;
                 });
                 keyboard.classList.add("unlock")
-                
+                notifiche.classList.add("unlock")
+                dotsContainer.style.display = "none";
                 console.log(results)
             }
         })

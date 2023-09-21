@@ -65,11 +65,16 @@ body {
 
 #notifiche {
     font-size: 18px;
+    display: none;
 }
 
 #bell {
     margin-right: 6px;
     vertical-align: middle;
+}
+
+#notifiche.unlock {
+    display: block;
 }
 
 #numbers.hide {
