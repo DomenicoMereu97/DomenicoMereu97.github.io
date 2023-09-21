@@ -1,9 +1,16 @@
 import data from '/assets/data.json' assert {type: 'json'};
 
 document.addEventListener("DOMContentLoaded", (event) => {
+
     const keyboard = document.getElementById('numbers'),
         keys = keyboard.getElementsByTagName('button'),
-        array = [];
+        array = [],
+        now = new Date,
+        h = now.getHours(),
+        m = now.getMinutes(),
+        clock = document.getElementById("time");
+        
+        clock.innerHTML = (h.toString() + ":" + m.toString());
 
     [...keys].forEach(key => {
         key.addEventListener("click", (event) => {
@@ -23,12 +30,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
-                          letters = pureArr.map(num => name[parseInt(num) -1]),
-                          control = [];
+                        letters = pureArr.map(num => name[parseInt(num) - 1]),
+                        control = [];
                     letters.forEach(letter => {
-                        if(vowels.includes(letter)) {
+                        if (vowels.includes(letter)) {
                             control.push(letter);
-                            if(control.length == letters.length) {
+                            if (control.length == letters.length) {
                                 results.push(element);
                                 return;
                             }
@@ -39,7 +46,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 results.sort((a, b) => {
                     return b.count - a.count;
                 });
-                
+
                 console.log(results)
             }
         })

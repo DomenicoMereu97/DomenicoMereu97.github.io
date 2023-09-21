@@ -60,6 +60,10 @@ body {
   opacity: 1;
 }
 
+#numbers.unlock {
+    transform: translateY(8000px);
+}
+
 #numbers.hide {
   opacity: 0.3;
 }
