@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 firstFilteredArr.forEach(element => {
                     const name = [...element.name],
-                        ceck = true,
                         letters = pureArr.map(num => name[parseInt(num) - 1]),
                         control = [],
                         difference = name.filter((element) => !letters.includes(element));
+                    let ceck = true;
                 
                     difference.forEach(l => {
                         if (vowels.includes(l)) {
