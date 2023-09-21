@@ -20,14 +20,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const dotsContainer = document.getElementById("fields"),
             dots = dotsContainer.querySelectorAll(".numberfield");
           
+            clear ++;
             dots.forEach(( e, index) => {
-                clear ++;
                 if(clear < 4 && index == clear-1) {
                     
                    !invert ? dots[index].classList.add('active') : dots[index].classList.remove('active');
      
                 }
                 if(clear == 4) {
+                    !invert ? dots[index].classList.add('active') : dots[index].classList.remove('active');
                     clear = 0;
                     invert = true;
                 }
