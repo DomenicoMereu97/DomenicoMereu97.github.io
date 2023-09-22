@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     difference.forEach(l => {
                         if (vowels.includes(l)) {
                             ceck = false;
+                            return;
                         }
                     });
                     if (ceck) {
