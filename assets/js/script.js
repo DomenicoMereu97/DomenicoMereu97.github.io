@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         letters = pureArr.map(num => name[parseInt(num) - 1]),
                         control = [],
                         difference = name.filter((element) => !letters.includes(element));
+                        console.log(difference)
                     let ceck = true;
                 
                     difference.forEach(l => {
