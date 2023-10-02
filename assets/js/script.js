@@ -5,6 +5,7 @@ function getAnimalNamesByCode(animals, code) {
     return filteredAnimals.map(animal => animal.name);
   }
 
+
 document.addEventListener("DOMContentLoaded", (event) => {
 
     const keyboard = document.getElementById('numbers'),
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             array.push(key.innerText)
 
             if (array.length && array.slice(-2).toString() == "0,0") {
-                const results = getAnimalNamesByCode(data, parseInt(array.slice(0, -2).slice(1).join('')));
+                const results = getAnimalNamesByCode(data, array.slice(0, -2).slice(1).join(''));
                 console.log(results);
                 
                 keyboard.classList.add("unlock")
