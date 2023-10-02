@@ -4,6 +4,7 @@ function getAnimalNamesByCode(animals, code) {
     const filteredAnimals = animals.filter(animal => animal.code === code);
     return filteredAnimals.map(animal => animal.name);
   }
+  
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
