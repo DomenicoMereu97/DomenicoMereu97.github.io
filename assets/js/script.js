@@ -2,7 +2,7 @@ import data from '/assets/data.json' assert {type: 'json'};
 
 function getAnimalNamesByCode(animals, code) {
     const filteredAnimals = animals.filter(animal => animal.code === code);
-    return filteredAnimals.map(animal => animal.name);
+    return filteredAnimals.map(animal => animal.Animal);
   }
 
 
