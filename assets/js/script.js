@@ -1,5 +1,10 @@
 import data from '/assets/data.json' assert {type: 'json'};
 
+function getAnimalNamesByCode(animals, code) {
+    const filteredAnimals = animals.filter(animal => animal.code === code);
+    return filteredAnimals.map(animal => animal.name);
+  }
+
 document.addEventListener("DOMContentLoaded", (event) => {
 
     const keyboard = document.getElementById('numbers'),
@@ -38,52 +43,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             array.push(key.innerText)
 
             if (array.length && array.slice(-2).toString() == "0,0") {
-                const accuracy = 1000,
-                    males = data.male.mostUsed.filter(e => e.count > accuracy),
-                    females = data.female.mostUsed.filter(e => e.count > accuracy),
-                    names = males.concat(females),
-                    [nameLenght] = array,
-                    pureArr = array.slice(0, -2).slice(1),
-                    firstFilteredArr = names.filter(e => e.name.length == nameLenght),
-                    vowels = ['A', 'E', 'I', 'O', 'U'],
-                    results = [],
-                    maxResults = 5;
-
-                firstFilteredArr.forEach(element => {
-                    const name = [...element.name],
-                        letters = pureArr.map(num => name[parseInt(num) - 1]),
-                        control = [],
-                        difference = name.filter((element) => !letters.includes(element));
-                        console.log(difference)
-                    let ceck = true;
+                const results = getAnimalNamesByCode(data, parseInt(array.slice(0, -2).slice(1).join('')));
+                console.log(results);
                 
-                    difference.forEach(l => {
-                        if (vowels.includes(l)) {
-                            ceck = false;
-                            return;
-                        }
-                    });
-                    if (ceck) {
-                        letters.forEach(letter => {
-                            if (vowels.includes(letter)) {
-                                control.push(letter);
-                                if (control.length == letters.length) {
-                                    results.push(element);
-                                    return;
-                                }
-                            }
-                        })
-                    }
-                    
-                });
-                results.sort((a, b) => {
-                    return b.count - a.count;
-                });
                 keyboard.classList.add("unlock")
                 notifiche.classList.add("unlock")
                 notes.forEach((note, index) => {
                     if(results[index] !== "undefined"){
-                        note.innerHTML = results[index].name;
+                        note.innerHTML = results[index];
                     }
                 });
                 notesContainer.classList.add("unlock")
